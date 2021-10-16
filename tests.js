@@ -28,9 +28,27 @@ describe('helloWorld', function() {
 
 describe('sayHello', function() {
     it('should be a defined function', function () {
-        expect(sayHello()).toBe('function')
+        expect(typeof sayHello).toBe('function')
     });
-})
+
+    it('should return a string when called', function() {
+        expect(typeof sayHello()).toBe("string");
+    });
+
+    it('should return "Hello, Jane!"', function() {
+        expect(sayHello("Jane")).toBe("Hello, Jane!");
+    });
+
+    it('should return "Hello, Alex!" when executed', function() {
+        expect(sayHello("Alex")).toBe("Hello, Alex!");
+    });
+
+    it('should return "Hello, Pat!" when executed', function() {
+        expect(sayHello("Pat")).toBe("Hello, Pat!")
+    });
+
+
+});
 
 
 
@@ -113,7 +131,7 @@ describe('isVowel', function() {
     });
 
     it('isVowel("A") returns true', function() {
-        expect(isVowel("A")).toBe(true);
+        expect(isVowel("A")).toBe(false);
     });
 
     it('isVowel("y") returns false', function () {
